@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raj Tech Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+header{
+background:linear-gradient(90deg,#00f2ff,#8b5cf6);
+padding:20px;
+text-align:center;
+}
+
+header h1{font-size:26px;}
+
+.section{
+padding:40px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+margin-bottom:20px;
+color:#00f2ff;
+}
+
+.news-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+padding:15px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px #00f2ff55;
+}
+
+button{
+padding:8px 15px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+background:#00f2ff;
+margin-top:10px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#111827;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🚀 Raj Tech Hub</h1>
+<p>Auto Updates + Raj Special Articles</p>
+</header>
+
+<!-- AUTO NEWS SECTION -->
+<section class="section">
+<h2>🔥 Auto Tech Headlines</h2>
+<div id="autoNews" class="news-grid"></div>
+<button onclick="loadNews()">Refresh News</button>
+</section>
+
+<!-- RAJ SPECIAL SECTION -->
+<section class="section">
+<h2>⭐ Raj Special Articles</h2>
+<div class="news-grid">
+
+<div class="card">
+<h3>How AI is Changing Student Life</h3>
+<p>Artificial Intelligence tools are helping students learn faster, organize tasks, and improve productivity like never before.</p>
+</div>
+
+<div class="card">
+<h3>Top 5 Skills Every Tech Student Must Learn</h3>
+<p>Programming, problem-solving, communication, and consistency are key skills for success in tech field.</p>
+</div>
+
+<div class="card">
+<h3>Future of Gaming in India</h3>
+<p>Esports and cloud gaming are growing rapidly, creating new opportunities for gamers and developers.</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Raj Tech Hub | Built by Raj
+</footer>
+
+<script>
+
+// Demo Auto Headlines (future me API replace kar sakte ho)
+const headlines = [
+"AI Tools Are Transforming Education in 2026",
+"New Smartphone Launch Shocks Indian Market",
+"Cybersecurity Threats Rising Globally",
+"Cloud Computing Demand Hits Record High",
+"Gaming Industry Revenue Breaks All Records",
+"Web Development Trends You Must Know"
+];
+
+function loadNews(){
+let container = document.getElementById("autoNews");
+container.innerHTML="";
+
+for(let i=0;i<3;i++){
+let randomIndex = Math.floor(Math.random()*headlines.length);
+
+container.innerHTML += `
+<div class="card">
+<h3>${headlines[randomIndex]}</h3>
+<p>This is an automatically rotating headline system. Future version can connect with real API.</p>
+</div>
+`;
+}
+}
+
+window.onload = loadNews;
+
+</script>
+
+</body>
+</html>
